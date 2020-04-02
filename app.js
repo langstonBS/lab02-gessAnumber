@@ -1,55 +1,49 @@
 //get user input from main.HTML
-import './test';
+
+import { compareNumbers } from './src/compareNumbers.js';
+
 const userInput = document.getElementById('user-input');
 const presSubmit = document.getElementById('submit-butten');
 let numberOfGess = document.getElementById('gess');
 let gess = document.getElementById('output');
 
+//creates computers math number
 const numberAnser = Math.floor(Math.random() * 20);
 
 
 
-
+//start the varabes
 let myCount = 0;
 
-
-function compareNumbers(gess, conretAnser){
-    if (gess < conretAnser) {
-        return -1;
-    } else if (gess === conretAnser) {
-        return 0;
-    } else if (gess > 1){
-        return 1;
-    }
-
-}
-
+//disabes button that is working
 function disabeButton() {
     presSubmit.disabled = true;
 }
 
-
-
+//tells you that you apm
 function winGame() {
     disabeButton();
     gess.textContent = 'you are amazing';
 }
 
+//if loss infoms the winner
 function loseGame(){
     disabeButton();
     gess.textContent = 'wow that sucks';
 }
 
+// if too low
 function toLow() {
     gess.textContent = 'you are too low';
     
 }
 
-
+//if to hight
 function toHigh() {
     gess.textContent = 'you are to high';     
 }
 
+//right wrong
 function rightWrong() {  
     const gessess = Number(userInput.value);
     let yesNo = compareNumbers(gessess, numberAnser);
@@ -66,4 +60,5 @@ function rightWrong() {
     numberOfGess.textContent = myCount;   
 }
 
+//the event lisener 
 presSubmit.addEventListener('click', rightWrong);

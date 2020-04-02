@@ -1,4 +1,4 @@
-import '../app.js';
+import app.js from '../app.js';
 
 const test = QUnit.test;
 

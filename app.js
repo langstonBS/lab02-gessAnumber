@@ -78,7 +78,7 @@ function rightWrong() {
     }  
     
    
-    if (gessLeft  === 0) {
+    if (gessLeft === 0) {
         return loseGame();
     }
     

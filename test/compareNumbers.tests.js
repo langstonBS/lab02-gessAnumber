@@ -12,7 +12,6 @@ test('funtion compareNumbers()', function(assert) {
     //Assert
     // Make assertions about what is expected valid result
     assert.equal(result, 0);
-
 });
 
 test('funtion compareNumbers()', function(assert) {
@@ -24,8 +23,7 @@ test('funtion compareNumbers()', function(assert) {
 
     //Assert
     // Make assertions about what is expected valid result
-    assert.equal(result1, -1);
-    
+    assert.equal(result1, -1);  
 });
 
 test('funtion compareNumbers()', function(assert) {
@@ -38,6 +36,5 @@ test('funtion compareNumbers()', function(assert) {
     //Assert
     // Make assertions about what is expected valid result
 
-    assert.equal(result2, 1);
-    
+    assert.equal(result2, 1);  
 });

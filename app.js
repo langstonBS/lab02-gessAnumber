@@ -28,7 +28,7 @@ function startVarables(){
 
 //disabes button that is working
 function disabeButton() {
-    if(presSubmit.disabled)
+    if (presSubmit.disabled)
     {
         presSubmit.disabled = false;
     } else {
@@ -86,6 +86,5 @@ resetBuntion.addEventListener('click', resetFuntion);
 function resetFuntion()
 {
     startVarables();
-    disabeButton();;
-     
+    disabeButton();  
 }

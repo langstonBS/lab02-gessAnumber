@@ -1,8 +1,105 @@
 
 body {
+    max-width: 700px;
+}
+
+h1 {
+    border-bottom: black solid 2px;
+    justify-content: center;
+    text-align: center;
+    font-size: 2.3em;
+    font-weight: bolder;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+main {
+    border: black solid 1px;
+    justify-content: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 1em;
+}
+.title2{
+    float: left;
+    clear: both;
+    z-index: 1;
+}
+h2{
+    text-align: center;
+    font-size: 2em;
+    font-weight: bolder;
+    border-bottom:  black solid 2px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.butten-information {
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+   
+}
+
+.butten-text{
+    justify-content: center;
+    float: left;
+}
+
+#user-input{
+    margin-left: 10px;
+    height: 40px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 1.8em;
+    text-align: center;
+    justify-content: center;
+    border-radius: 4px;
+    max-width: 180px;
+
 
 }
+button {
+    text-align: center;
+    font-size: 1.5em;
+    padding: 5px 10px 5px 10px;
+    font-weight: bolder;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    border-radius: 4px;
+    animation-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition-duration: 0.4s;
+    
+}
+  
+button:hover {
+    background-color: red;
+    color: white;
+  }
+
+#resetPress {
+    display: none;
+    margin-left: 20px;
+}
+
+#output{
+    font-size: 2em;
+    color: blue;
+    font-weight: bolder;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;  
+}
+
+.output-text{
+    z-index: 4;
+    padding-right: 20px;
+    float: right;
+    font-size: 1.5em;
+    font-weight: bolder;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin: 10px;
+
+}
+
+#gess {
+    font-size: 5em;
+    font-weight: bolder;
+    color: red;
+    text-align: center;
+}
+
+

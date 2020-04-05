@@ -6,29 +6,47 @@ const userInput = document.getElementById('user-input');
 const presSubmit = document.getElementById('submit-butten');
 let numberOfGess = document.getElementById('gess');
 let gess = document.getElementById('output');
+const resetBuntion = document.getElementById('resetPress');
 
 //creates computers math number
 const numberAnser = Math.floor(Math.random() * 20);
 
 
 
-//start the varabes
 let myCount = 0;
+let gessLeft = 4;
+
+
+function startVarables(){
+    myCount = 0;
+    gessLeft = 4;
+    resetBuntion.style.display = 'none';
+    gess.textContent = '';
+    numberOfGess.textContent = gessLeft;
+}
+
 
 //disabes button that is working
 function disabeButton() {
-    presSubmit.disabled = true;
+    if(presSubmit.disabled)
+    {
+        presSubmit.disabled = false;
+    } else {
+        presSubmit.disabled = true;
+    }
 }
 
 //tells you that you apm
 function winGame() {
     disabeButton();
+    resetBuntion.style.display = 'inline';
     gess.textContent = 'you are amazing';
 }
 
 //if loss infoms the winner
 function loseGame(){
     disabeButton();
+    resetBuntion.style.display = 'inline';
     gess.textContent = 'wow that sucks';
 }
 
@@ -57,8 +75,17 @@ function rightWrong() {
         winGame();
     }
     myCount = myCount + 1;
-    numberOfGess.textContent = myCount;   
+    gessLeft = gessLeft - 1;
+    numberOfGess.textContent = gessLeft;   
 }
 
 //the event lisener 
 presSubmit.addEventListener('click', rightWrong);
+resetBuntion.addEventListener('click', resetFuntion);
+
+function resetFuntion()
+{
+    startVarables();
+    disabeButton();;
+     
+}

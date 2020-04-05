@@ -12,18 +12,36 @@
 <body>
     <header>        
          <h1>Lets play a game</h1>
-         <h2>geses the number I am thinking of</h2>
+         
     </header>
-
-    <input type="number" id="user-input">
-    <div>The number of geses <span id="gess">4</span></div>
     
-    <div><button id="submit-butten">gues</button></div>
-    <span id="output"></span>
+    <main>
+        <div class="title">
+            <h2>geses the number I am thinking of</h2>
+        </div>
+        <section class="gess-game">
+            <div class="butten-text">
+                <input type="number" id="user-input">
+                    <div class="butten-information">
+                        <button id="submit-butten">gues</button>
+                        <button id="resetPress">reset</button>
+                    </div>
+                    <span id="output"></span> 
+            </div>
+            <section class="output-text">
+                <div class="guesses-text">The number of geses:   
+                </div> 
+                 <span id="gess">4</span> 
+            </section>
+            
+        </section>
+        
+    </main>
     
-<footer>
+    <footer>
+       
 
-</footer>
+    </footer>
     
 </body>
 <script type="module" src="app.js"></script>

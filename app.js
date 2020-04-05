@@ -6,29 +6,47 @@ const userInput = document.getElementById('user-input');
 const presSubmit = document.getElementById('submit-butten');
 let numberOfGess = document.getElementById('gess');
 let gess = document.getElementById('output');
+const resetBuntion = document.getElementById('resetPress');
 
 //creates computers math number
-const numberAnser = Math.floor(Math.random() * 20);
+let numberAnser = Math.floor(Math.random() * 20);
 
 
 
-//start the varabes
-let myCount = 0;
+let gessLeft = 4;
+
+
+function startVarables(){ 
+    gessLeft = 4;
+    resetBuntion.style.display = 'none';
+    gess.textContent = '';
+    numberOfGess.textContent = gessLeft;
+    numberAnser = Math.floor(Math.random() * 20);
+    console.log(numberAnser);
+}
+
 
 //disabes button that is working
 function disabeButton() {
-    presSubmit.disabled = true;
+    if (presSubmit.disabled)
+    {
+        presSubmit.disabled = false;
+    } else {
+        presSubmit.disabled = true;
+    }
 }
 
 //tells you that you apm
 function winGame() {
     disabeButton();
+    resetBuntion.style.display = 'inline';
     gess.textContent = 'you are amazing';
 }
 
 //if loss infoms the winner
 function loseGame(){
     disabeButton();
+    resetBuntion.style.display = 'inline';
     gess.textContent = 'wow that sucks';
 }
 
@@ -45,20 +63,35 @@ function toHigh() {
 
 //right wrong
 function rightWrong() {  
+    console.log(numberAnser);
     const gessess = Number(userInput.value);
     let yesNo = compareNumbers(gessess, numberAnser);
-    if (myCount === 3){
-        loseGame();
+    
+    if (yesNo === 0){
+        return winGame();
     } else if (yesNo === -1){
-        toLow();   
+        toLow(); 
+        gessLeft = gessLeft - 1;  
     } else if (yesNo === 1){
         toHigh(); 
-    } else if (yesNo === 0){
-        winGame();
+        gessLeft = gessLeft - 1;
+    }  
+    
+   
+    if (gessLeft === 0) {
+        return loseGame();
     }
-    myCount = myCount + 1;
-    numberOfGess.textContent = myCount;   
+    
+
+    numberOfGess.textContent = gessLeft;   
 }
 
 //the event lisener 
 presSubmit.addEventListener('click', rightWrong);
+resetBuntion.addEventListener('click', resetFuntion);
+
+function resetFuntion()
+{
+    startVarables();
+    disabeButton();  
+}
